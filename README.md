@@ -22,22 +22,23 @@ Npm (Node package manager) là một công cụ tạo và quản lý các thư v
 TẠO MỘT PROJECT NODEJS:
 Để tạo 1 Project nodejs chúng ta chỉ cần chạy command như sau:
 
-npm init --yes hoặc npm init
+```jsx npm init ```  --yes hoặc ```jsx npm init ```
+
 ![image](https://user-images.githubusercontent.com/54676091/120788082-42993f00-c55a-11eb-9a4d-884f386cacb9.png)
 
-npm init --yes hay hơn vì khi thêm --yes n sẽ tạo luôn project mặc định cho chúng ta mà không cần hỏi một vài tham số như author...
+```npm init --yes ``` hay hơn vì khi thêm --yes n sẽ tạo luôn project mặc định cho chúng ta mà không cần hỏi một vài tham số như author...
 
 CẦN CÀI THÊM FRAMEWORK EXPRESS CỦA NODEJS :
 Bởi khi đã có npm cài đặt ở trên thì chúng ta cài đặt thêm express của Nodejs rất đơn giản bằng command:
-      npm install express --save
+      ```jsx npm install express --save ```
 ![image](https://user-images.githubusercontent.com/54676091/120788015-2e554200-c55a-11eb-93ad-a463cffdfd26.png)
 
 
-Thêm --save để có thể lưu phiên bản của module vào phần dependencies trong file package.json
+Thêm ```jsx --save ``` để có thể lưu phiên bản của module vào phần dependencies trong file package.json
 
 HELLO WORLD BẰNG NODEJS:
 Sau khi chúng ta chạy lệnh npm init --yes và install thêm module express thì chúng ta được một file có tên là package.json và đây là những gì có trong file package.json
-
+```jsx
 {
   "name": "Nodejs",
   "version": "1.0.0",
@@ -53,7 +54,7 @@ Sau khi chúng ta chạy lệnh npm init --yes và install thêm module express 
     "express": "^4.17.1"
   }
 }
-
+```
 Giải thích: khi chúng ta install các module thì Nodejs còn sinh ra một folder là node_modules để chứa các thứ liên quan đến module bạn vừa cài đặt, nhìn chung là cũng không cần quan tâm đến folder này lắm . Khi Nodejs chạy nó sẽ chạy vào file được chỉ định trong key main ở file packager.json và ở đây  đang để mặc đinh là file index.js vì thế ta sẽ tạo một file mới có tên là index.js để đảm bảo viết code vào đó thì chắc chắn code được chạy. Và đây là file index.js
 ```jsx
 const express = require('express');
@@ -74,31 +75,32 @@ app.listen(port, function(error){
 
 Giải thích :
 
-const express = require('express'):
+```jsx const express = require('express'): ```
 Trong Nodejs bạn muốn sử dung module nào thì bạn cần phải require module đó vào, ở đây muốn sử dụng express nên phải require nó vào thôi
-const app = express():      
+```jsx const app = express():  ```    
 Tạo một app sử dụng module express vừa require ở trên
-const port = 3000:
+```jsx const port = 3000: ```
 Khai báo một cổng để chạy ứng dụng NodeJS của bạn trên server, bạn có thể để cổng khác tùy ý tránh bị trùng cổng giữa các ứng dụng là được 
 
-app.get('/', function(req, res){
+```jsx app.get('/', function(req, res){
     res.send("Hello World");
-})
+}) 
+```
 Hàm get() sẽ có 2 tham số, tham số đầu tiên là địa chỉ mà server sẽ nhận request từ client để thực thi function là tham số thứ 2. Ở đây khi truy cập vào đường dẫn http://localhost:3000/ thì bạn sẽ nhận được kết quả
 ![image](https://user-images.githubusercontent.com/54676091/120791622-a160b780-c55e-11eb-9018-3a8e61fa055b.png)
-
+```jsx
 app.listen(port, function(error){
     if (error) {
         console.log("Something went wrong");
     }
     console.log("server is running port:  " + port);
 })
- 
+```
  Hàm listen() sẽ khởi động server
  Hàm này có 2 tham số, tham số đầu tiên là port mà ứng dụng NodeJS của bạn sẽ chạy, tham số thứ 2 là một callback function sẽ được gọi khi server khởi động. 
  Function này lại chứa một tham số error để bắt lỗi khi mà server không thể khởi động vì một lý do nào đó. Ở đây mình console.log() để biết là server có khởi động thành công hay gặp lỗi, còn nếu các bạn không thích thì có thể viết lại như thế này
  
-app.listen(port)
+```jsx app.listen(port) ```
 thì vẫn chạy bình thường :V
 
 thử chạy lênh node index.js để xem có lỗi gì không nhé. nếu terminal hiện server is running port: 3000 thì đã thành công\
