@@ -55,7 +55,7 @@ Sau khi chúng ta chạy lệnh npm init --yes và install thêm module express 
 }
 
 Giải thích: khi chúng ta install các module thì Nodejs còn sinh ra một folder là node_modules để chứa các thứ liên quan đến module bạn vừa cài đặt, nhìn chung là cũng không cần quan tâm đến folder này lắm . Khi Nodejs chạy nó sẽ chạy vào file được chỉ định trong key main ở file packager.json và ở đây  đang để mặc đinh là file index.js vì thế ta sẽ tạo một file mới có tên là index.js để đảm bảo viết code vào đó thì chắc chắn code được chạy. Và đây là file index.js
-
+```jsx
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -70,7 +70,7 @@ app.listen(port, function(error){
     }
     console.log("server is running port:  " + port);
 })
-
+```
 
 Giải thích :
 
